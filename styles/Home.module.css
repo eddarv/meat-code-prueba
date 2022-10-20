@@ -1,129 +1,335 @@
-.container {
-  padding: 0 2rem;
+/* ----------------------------------------------------- HEADER ---------------------------------------------*/
+
+.mediabtn {
+  width: 40px;
+  height: 40px;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+.heroImage {
+  height: 100vh;
+  width: 100%;
+  display: inline-flex;
+  padding-top: 60px;
+  background-image: linear-gradient(
+      0deg,
+     rgba(250, 250, 250, 1),
+     rgba(250, 250, 250, 1),
+     rgba(255, 255, 255, 0) 30%),
+      url("../public/hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.decorationImage section {
+  max-width: clamp(250px,70%,500px);
+
+}
+
+.decorationImage {
+  display: inline-flex;
+  flex-direction: column;
+  background-image: url("../public/BRUSH.png");
+  background-repeat: no-repeat;
+  background-position: right 55%;
+  background-size: 2000px 25%;
+  overflow-x: visible;
+}
+
+.flexRowElement1{
+  flex: 0 0 60%;
+  padding-left: min(10%,230px);
+}
+
+.flexRowElement2{
+  display: inline-flex;
+  justify-content: right;
+  flex: 0 0 40%;
+}
+
+.flexColumnElement{
+  flex: 0 0 23%;
+}
+
+.flexColumnElement2{
+  flex: 0 0 38.5%;
+  display: inline-flex;
+  align-items: center;
+}
+
+.socialMedia{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 216px;
+  margin-right: 60px;
+}
+
+.socialMedia a{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 3px solid #009CD9;
+}
+
+.socialMedia :nth-child(2){
+  border: 3px solid #B72C2C;
+}
+
+.socialMedia :nth-child(3){
+  border: 3px solid #D8AD3D;
+}
+
+@media only screen and (max-width: 560px) {
+  /* Para movil: */
+
+  .socialMedia{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content:space-between;
+    width: 62px;
+    margin-right: 30px;
+    height: 250px;
+  }
+
+}
+
+/* ----------------------------------------------------- MAIN ---------------------------------------------*/
+
+.sectionTitle {
+  display: block;
+  height: 130px;
+  text-align: center;
+  background-image: url("../public/BRUSH.png");
+  background-repeat: no-repeat;
+  background-size: 464px 65px;
+  background-position: center bottom;
+  margin-bottom: 100px;
+  margin-top: 0px;
+}
+
+.cardContainer{
+  width: 100%;
+  display: inline-grid;
+  justify-content: center;
+  grid-template-areas:
+    "menu c1  c2  c3"
+    "menu c4  c5  c6"
+    "menu c7  c8  c9"
+    "menu c10 c11 c12"
+    "menu c13 c14 c15"
+    "menu c16 c17 c18"
+    "menu c19 c20 c21";
+  grid-template-columns: 22% 22% 22% 22%;
+  column-gap: 30px;
+  row-gap: 36px;
+}
+
+.cardContainer>*{
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+}
+
+.menu{
+  grid-area: menu;
+  min-height: 6rem;
+  height: fit-content;
+}
+
+.menu > ul{
+  list-style-type: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.menu>ul>li{ 
+  transition: background-color .5s;
+}
+
+.menu>ul>li>button{
+  background-color: rgba(0, 0, 0, 0);
+  border-style: none;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+.menu>ul>li:hover{
+  background-color: #aaa;
+}
+
+.card{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 438px;
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+.card img{
+  border-radius: 10px 10px 0px 0px;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.card h4, .card p{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
+.card p{
+  display: inline-block;
+  width: 100%;
+  height: 134px;
   margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  padding-bottom: 10px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
+.card h4{
+  display: inline-block;
+  width: 100%;
+  height: 90px;
   margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+@media only screen and (max-width: 1200px) {
+  /* Para movil: */
+
+  .cardContainer{
+    display: inline-grid;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 1470px;
+    grid-template-areas:
+      "menu c1  c2 "
+      "menu c3  c4 "
+      "menu c5  c6 "
+      "menu c7  c8"
+      "menu c9  c10"
+      "menu c11  c12"
+      "menu c13  c14"
+      "menu c15  c16"
+      "menu c17 c18 "
+      "menu c19 c20 ";
+      
+    grid-template-columns: 270px 270px 270px ;
+    column-gap: 30px;
+    row-gap: 36px;
+  }
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
+@media only screen and (max-width: 920px) {
+  /* Para movil: */
+
+  .cardContainer{
+    display: inline-flex;
     flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 270px;
+    
   }
 }
+.productImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
+
+/* ----------------------------------------------------- FOOTER ---------------------------------------------*/
+.footer>p{
+
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 100px;
+  color: #ff0000;
+  font-weight: 600;
+
+}
+
+
+
+.form{
+  display: inline-grid;
+  margin: auto;
+  justify-content: center;
+  position: relative;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 50%;
+  grid-template-areas:
+    "input input"
+    "input input"
+    "btn1 btn2";
+  grid-template-columns: 350px 350px ;
+  column-gap: 24px;
+  row-gap: 50px;
+  padding-bottom: 50px;
+}
+
+.form > input{
+  height: 50px;
+}
+
+.form > button{
+  background-color: #D8AD3D;
+  border-style: none;
+  width: 150px;
+  height: 55px;
+  border-radius: 30px 30px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color .5s;
+  
+}
+
+.form > button:hover{
+  background-color: #836d37;
+  
+}
+
+.contactanos{
+  margin-top: 100px;
+}
+
+@media only screen and (max-width: 750px) {
+  /* Para movil: */
+
+  .form{
+    display: inline-flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: min(90%, 350px);
+    
   }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
+
+  .form>input{
+    width: min(90%, 350px);
+    
   }
 }
